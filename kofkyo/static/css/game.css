@@ -1,0 +1,73 @@
+#kof {
+    width: 1000px;
+    height: 400px;
+    background-image: url("/static/images/background/0.gif");
+    background-size: 100% 100%;
+    border: 5px pink solid;
+    position: absolute;
+}
+
+
+#kof>.kof-head {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+}
+#kof>.kof-head>.kof-head-hp-0 {
+    width: calc(50% - 100px);
+    height: 60%;
+    border: solid white 3px;
+    border-right: none;
+    box-sizing: border-box;
+    margin-left: 65px;
+}
+
+#kof>.kof-head>.kof-head-hp-1 {
+    width: calc(50% - 100px);
+    height: 60%;
+    border: solid white 3px;
+    border-left: none;
+    box-sizing: border-box;
+}
+
+#kof>.kof-head>.kof-head-timer {
+    width: 60px;
+    height: 80%;
+    border: solid white 5px;
+    font-size: 30px;
+    background-color: orange;
+    font-weight: 800;
+    text-align: center;
+    line-height: 40px;
+    user-select: none;
+    color: white;
+    box-sizing: border-box;
+}
+
+
+#kof>.kof-head>.kof-head-hp-0>div {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+}
+
+#kof>.kof-head>.kof-head-hp-1>div {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+}
+
+#kof>.kof-head>.kof-head-hp-0>div>div {
+    width: 100%;
+    height: 100%;
+    background-color: lightgreen;
+}
+
+#kof>.kof-head>.kof-head-hp-1>div>div {
+    width: 100%;
+    height: 100%;
+    background-color: lightgreen;
+}
