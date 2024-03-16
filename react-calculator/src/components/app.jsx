@@ -10,11 +10,15 @@ import { Navigate } from 'react-router-dom';
 
 
 class App extends Component {
-    state = {  } 
+    state = { 
+        is_login: false,
+        username: "xx",
+
+     };
     render() { 
         return (
             <React.Fragment>
-                <NavBar />
+                <NavBar is_login={this.state.is_login} username={this.state.username}/>
                 <div className="container">
                     <Routes>
                         <Route path='/' element={<Home />} />

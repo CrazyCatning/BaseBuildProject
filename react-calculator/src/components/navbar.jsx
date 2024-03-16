@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom';
 
 class NavBar extends Component {
     state = {}
+
+
     render() {
         return (
             <React.Fragment>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <div className="container">
-                        <Link className="navbar-brand" to="/" style={{color: "lightblue"}}>原神启动</Link>
+                        <Link className="navbar-brand" to="/" style={{ color: "lightblue" }}>原神启动</Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -18,9 +20,10 @@ class NavBar extends Component {
                                 <li className="nav-item">
                                     <Link className="nav-link active" aria-current="page" to="/home">首页</Link>
                                 </li>
-                                <li className="nav-item">
+                                <li li className="nav-item" >
                                     <Link className="nav-link" to="/calculator">计算器</Link>
                                 </li>
+
                             </ul>
                             <ul className="navbar-nav">
                                 <li className="nav-item">
