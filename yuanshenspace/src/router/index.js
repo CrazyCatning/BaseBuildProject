@@ -7,42 +7,38 @@ import UserlistView from '../views/UserlistView.vue'
 import UserProfileView from '../views/UserProfile.vue'
 const routes = [
     {
-        path: '/',
+        path: '/myspace/',
         name: "home",
         component: HomeView
     },
     {
-        path: '/home',
-        name: "home",
-        component: HomeView
-    },
-    {
-        path: '/login',
+        path: '/myspace/login/',
         name: "login_index",
         component: LoginView
     },
     {
-        path: '/register',
+        path: '/myspace/register/',
         name: "register_index",
         component: Registerview
-    },{
-        path: '/404',
+    },
+    {
+        path: '/myspace/404/',
         name: "404",
         component: NotFound
     },
     {
-        path: '/userlist',
+        path: '/myspace/userlist',
         name: "userlist_index",
         component: UserlistView
     },
     {
-        path: '/userprofile',
+        path: '/myspace/userprofile/:userId/',
         name: "userprofile",
         component: UserProfileView
     },
     {
-        path: '/:catchAll(.*)',
-        redirect: "/404/"
+        path: '/myspace/:catchAll(.*)',
+        redirect: "/myspace/404/"
     }
 ]
 

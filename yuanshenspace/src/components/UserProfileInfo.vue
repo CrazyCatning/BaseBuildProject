@@ -3,7 +3,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-3 img-field">
-                    <img class="img-fluid" src="https://cdn.acwing.com/media/user/profile/photo/129841_lg_162ad8d3e3.jpeg" alt="">
+                    <img class="img-fluid" :src="user.photo" alt="">
                 </div>
                 <div class="col-9">
                     <div class="username">{{ user.username }}</div>
@@ -21,7 +21,8 @@
 
 
 <script>
-
+import $ from 'jquery'
+import { useStore } from 'vuex';
 
 export default {
     name: "UserProfileInfo",
@@ -34,11 +35,38 @@ export default {
 
     setup(props, context) {
         const follow = () => {
-            context.emit('follow');
+            const store = useStore();
+            $.ajax({
+                url: 'https://app165.acapp.acwing.com.cn/myspace/follow/',
+                type: "post",
+                headers: {
+                    'Authorization': "Bearer " + store.state.user.access,
+                },
+                data: {
+                    target_id: props.user.id
+                },
+                success: () => {
+                    context.emit('follow');
+                }
+            })
+
         };
 
         const unfollow = () => {
-            context.emit('unfollow');
+            const store = useStore();
+            $.ajax({
+                url: 'https://app165.acapp.acwing.com.cn/myspace/follow/',
+                type: "post",
+                headers: {
+                    'Authorization': "Bearer " + store.state.user.access,
+                },
+                data: {
+                    target_id: props.user.id
+                },
+                success: () => {
+                    context.emit('unfollow');
+                }
+            })
         };
 
         return {
@@ -79,5 +107,8 @@ button {
     justify-content: center;
 }
 
+.card {
+    margin-bottom: 10px;
+}
 
 </style>
